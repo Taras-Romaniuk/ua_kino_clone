@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}{% endblock title %}</title>
+  <link rel="icon" type="image/png" href="{% static "img/logo.png" %}">
+  <link href="{% static "css/base.css" %}" rel="stylesheet">
+  {% block css %}{% endblock css %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="head-fixed">
+      <div class="logo-box">
+        <a href="/" title="На головну">
+          <img src="{% static "img/logo.png" %}" style="width: 64px; height: 64px;" alt="Логотип">
+          <span class="logo-title">MyFilms</span>
+        </a>
+      </div>
+  </header>
+  <main>
+    {% block main %}{% endblock %}
+  </main>
+  <footer>
+    <p>tarasromaniuk2003@gmail.com, 2023</p>
+  </footer>
+  {% block js %}{% endblock js %}
+</body>
+
+</html>

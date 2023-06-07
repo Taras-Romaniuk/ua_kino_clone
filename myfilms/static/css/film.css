@@ -1,0 +1,26 @@
+.film-container {
+    display: table;
+}
+.film-elem {
+    float: left;
+    text-align: center;
+    width: 400px;
+    margin: 10px;
+}
+.film-description {
+    float: left;
+    width: 400px;
+    margin: 10px;
+    border-left: 2px solid red;
+    padding-left: 4px;
+}
+.film-properties {
+    float: left;
+    width: 400px;
+    margin: 10px;
+    border-left: 2px solid red;
+    padding-left: 4px;
+}
+.film-thumb {
+    
+}

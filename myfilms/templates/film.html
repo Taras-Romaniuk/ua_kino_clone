@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}{{film_obj.film_title}}{% endblock %}
+
+{% block css %}<link href="{% static "css/film.css" %}" rel="stylesheet">{% endblock css %}
+
+{% block main %}
+<div class="film-container">
+    <div class="film-elem">
+        <div class="film-thumb">
+            <img src="/{{film_obj.film_thumb_image}}" alt="{{film_obj.film_title}}">
+        </div>
+        <div class="film-title">
+            <h1>{{ film_obj.film_title|upper }}</h1>
+        </div>
+    </div>
+    <div class="film-description">
+        <h2>Про фільм "{{film_obj.film_title}}":</h2>
+        {{film_obj.film_description}}
+    </div>
+    <div class="film-properties">
+        <h2>Характеристики:</h2>
+        Рік: {{film_obj.film_release_year}}</br>
+        Країна: {{film_obj.film_country}}</br>
+        Жанр: {% for genre in film_obj.film_genre%}<a href="/films/genre/{{genre}}">{{genre}}</a>{% if not forloop.last %}, {% endif %} {% endfor %}</br>
+        Режисер: {{film_obj.film_director}}</br>
+        Актори: {{film_obj.film_actors}}</br>
+        Тривалість: {{film_obj.film_duration}}</br>
+        IMDb: {{film_obj.film_imdb_rating}}</br>
+    </div>
+</div>
+
+{% endblock main %}
+
+{% block js %}{% endblock js %}

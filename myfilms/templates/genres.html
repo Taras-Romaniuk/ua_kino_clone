@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}MyFilms{% endblock %}
+
+{% block css %}<link href="{% static "css/index.css" %}" rel="stylesheet">{% endblock css %}
+
+{% block main %}
+<div id="films-main" class="films-container">
+    {% for film in page_obj %}
+        <div class="film-elem">
+            <a href="/films/{{film.film_id}}" onclick="redirectToFilm()">
+                <div class="film-thumb">
+                    <img src="/{{film.film_thumb_image}}" alt="{{film.film_title}}">
+                </div>
+                <div class="film-title">
+                    {{ film.film_title|upper }}
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+<button id="load-more-button" class="btn-1" role="button" onclick="load_more_button_on_click(genre='{{genre}}')">Більше</button>
+
+<script src="{% static "js/index.js" %}"></script> 
+{% endblock main %}
+
+{% block js %}<script src="{% static "js/genres.js" %}"></script> {% endblock js %}

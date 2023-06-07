@@ -1,0 +1,29 @@
+.films-container {
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.film-elem {
+    flex: 1 0 15%;
+    margin: 50px;
+    background-color: #1d1e20;
+    -webkit-box-shadow: 5px 10px 4px rgba(3, 3, 3, 0.3),0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 5px 10px 4px rgba(3, 3, 3, 0.3),0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 5px 10px 4px rgba(3, 3, 3, 0.3),0 0 40px rgba(0, 0, 0, 0.1) inset;
+    padding: 20px;
+}
+.film-thumb {
+    text-align: center;
+    opacity: 1;
+    background-color: rgba(0,0,0,.6);
+    transition: opacity, 0.5s, background-color, 0.5s;
+}
+.film-thumb:hover {
+    opacity: 0.5;
+    background-color: rgba(0,0,0,.6);
+}
+.film-title {
+    font-weight: 700;
+    text-align: center;
+    color: #9f9f9f;
+}
